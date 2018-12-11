@@ -22,6 +22,7 @@ public class NacosClientController {
 
 	@GetMapping("/config")
 	public String getConfigFromProvider(HttpServletRequest request, HttpServletResponse response) {
-		return restTemplate.getForObject("http://laboratory-nacos-provider/nacos/client/one", String.class);
+//		return restTemplate.getForObject("http://laboratory-nacos-provider/nacos/client/one", String.class);
+		return "!";
 	}
 }

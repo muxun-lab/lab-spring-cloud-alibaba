@@ -8,8 +8,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @author <sunshine> yangsonglin@maoyan.com
  * @date 2018-12-03 20:46
  */
-@EnableDiscoveryClient
 @SpringBootApplication
+@EnableDiscoveryClient
 public class NacosClientBootstrap {
 
 	public static void main(String[] args) {

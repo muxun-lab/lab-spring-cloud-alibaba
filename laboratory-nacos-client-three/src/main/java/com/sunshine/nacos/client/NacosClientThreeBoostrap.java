@@ -6,13 +6,13 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @author <sunshine> yangsonglin@maoyan.com
- * @date 2018-12-03 16:41
+ * @date 2018-12-11 18:42
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class NacosClientBootstrap {
+public class NacosClientThreeBoostrap {
 
 	public static void main(String[] args) {
-		SpringApplication.run(NacosClientBootstrap.class);
+		SpringApplication.run(NacosClientThreeBoostrap.class);
 	}
 }

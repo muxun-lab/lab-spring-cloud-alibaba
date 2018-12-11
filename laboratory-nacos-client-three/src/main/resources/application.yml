@@ -1,12 +1,12 @@
 server:
-  port: 20020
+  port: 20030
 spring:
+  application:
+    name: laboratory-nacos-client
   cloud:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-  application:
-    name: laboratory-provider
 management:
   endpoints:
     web:
