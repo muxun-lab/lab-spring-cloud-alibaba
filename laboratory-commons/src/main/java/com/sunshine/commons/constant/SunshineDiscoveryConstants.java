@@ -1,7 +1,7 @@
 package com.sunshine.commons.constant;
 
 /**
- * @author <sunshine> yangsonglin@maoyan.com
+ * @author <sunshine> mysunshinedreams@163.com
  * @date 2018-12-11 21:23
  */
 public class SunshineDiscoveryConstants {

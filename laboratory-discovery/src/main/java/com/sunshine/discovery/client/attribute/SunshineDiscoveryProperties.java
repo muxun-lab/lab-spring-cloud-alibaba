@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct;
 
 /**
  * Sunshine服务发现属性配置
- * @author <sunshine> yangsonglin@maoyan.com
+ * @author <sunshine> mysunshinedreams@163.com
  * @date 2018-12-11 21:08
  */
 @ConfigurationProperties("spring.cloud.sunshine.discovery")

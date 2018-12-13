@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Sunshine服务发现客户端
  *
- * @author <sunshine> yangsonglin@maoyan.com
+ * @author <sunshine> mysunshinedreams@163.com
  * @date 2018-12-11 21:03
  */
 public class SunshineDiscoveryClient implements DiscoveryClient {

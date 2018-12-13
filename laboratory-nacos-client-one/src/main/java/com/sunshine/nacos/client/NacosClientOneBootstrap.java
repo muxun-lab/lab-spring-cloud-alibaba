@@ -5,14 +5,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
- * @author <sunshine> yangsonglin@maoyan.com
+ * @author <sunshine> mysunshinedreams@163.com
  * @date 2018-12-03 16:41
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class NacosClientBootstrap {
+public class NacosClientOneBootstrap {
 
 	public static void main(String[] args) {
-		SpringApplication.run(NacosClientBootstrap.class);
+		SpringApplication.run(NacosClientOneBootstrap.class);
 	}
 }

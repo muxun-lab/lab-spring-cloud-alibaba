@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 服务发现自动配置
  *
- * @author <sunshine> yangsonglin@maoyan.com
+ * @author <sunshine> mysunshinedreams@163.com
  * @date 2018-12-11 20:50
  */
 @Configuration
