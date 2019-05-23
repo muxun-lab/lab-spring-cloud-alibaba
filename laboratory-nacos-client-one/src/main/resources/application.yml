@@ -14,3 +14,11 @@ spring:
             file: classpath:flow-control-rule.json
             data-type: json
             rule-type: flow
+#        ds2:
+#          nacos:
+#            server-addr: 127.0.0.1:8848
+#            groupId: DEFAULT_GROUP
+#            dataId: ${spring.application.name}-sentinel
+#            rule-type: flow
+
+
