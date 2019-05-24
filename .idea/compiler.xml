@@ -6,12 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="laboratory-nacos-client-two" />
-        <module name="laboratory-discovery" />
-        <module name="laboratory-nacos-client-one" />
-        <module name="laboratory-main" />
-        <module name="laboratory-nacos-client-three" />
         <module name="laboratory-commons" />
+        <module name="laboratory-discovery" />
+        <module name="laboratory-main" />
+        <module name="laboratory-nacos-client-one" />
+        <module name="laboratory-nacos-client-three" />
+        <module name="laboratory-nacos-client-two" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />

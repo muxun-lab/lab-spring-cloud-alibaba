@@ -3,45 +3,22 @@
     <!-- Configure the database connection here -->
     <jdbc>
         <driver>com.mysql.jdbc.Driver</driver>
-        <url>jdbc:mysql://localhost:3306/test01</url>
+        <url>jdbc:mysql://localhost:3306/spring_cloud_alibaba_laboratory</url>
         <user>root</user>
-        <password>yangsl</password>
+        <password>MySunshine</password>
     </jdbc>
 
     <generator>
-        <!-- The default code generator. You can override this one, to generate your own code style.
-             Supported generators:
-             - org.jooq.codegen.JavaGenerator
-             - org.jooq.codegen.ScalaGenerator
-             Defaults to org.jooq.codegen.JavaGenerator -->
         <name>org.jooq.codegen.JavaGenerator</name>
-
         <database>
-            <!-- The database type. The format here is:
-                 org.util.[database].[database]Database -->
             <name>org.jooq.meta.mysql.MySQLDatabase</name>
-
-            <!-- The database schema (or in the absence of schema support, in your RDBMS this
-                 can be the owner, user, database name) to be generated -->
-            <inputSchema>test01</inputSchema>
-
-            <!-- All elements that are generated from your schema
-                 (A Java regular expression. Use the pipe to separate several expressions)
-                 Watch out for case-sensitivity. Depending on your database, this might be important! -->
+            <inputSchema>spring_cloud_alibaba_laboratory</inputSchema>
             <includes>.*</includes>
-
-            <!-- All elements that are excluded from your schema
-                 (A Java regular expression. Use the pipe to separate several expressions).
-                 Excludes match before includes, i.e. excludes have a higher priority -->
             <excludes></excludes>
         </database>
-
         <target>
-            <!-- The destination package of your generated classes (within the destination directory) -->
-            <packageName>com.sunshine.nacos.client.jooq.test01</packageName>
-
-            <!-- The destination directory of your generated classes. Using Maven directory layout here -->
-            <directory>/Users/sunshine/WorkSpace/Github/Personal/Java/spring-cloud-alibaba-laboratory/laboratory-nacos-client-one/src/main/java</directory>
+            <packageName>com.sunshine.alibaba.cloud.jooq.laboratory</packageName>
+            <directory>/Users/sunshine/Projects/Github/Personal/JavaVirtualMachine/spring-cloud-alibaba-laboratory/laboratory-nacos-client-one/src/main/java</directory>
         </target>
     </generator>
 </configuration>
