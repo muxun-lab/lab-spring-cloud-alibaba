@@ -3,7 +3,7 @@ package com.sunshine.alibaba.cloud.configuration;
 import com.alibaba.csp.sentinel.datasource.AutoRefreshDataSource;
 import com.alibaba.csp.sentinel.datasource.Converter;
 import com.alibaba.csp.sentinel.property.SentinelProperty;
-import com.sunshine.alibaba.cloud.handler.FlowRuleHandler;
+import com.sunshine.alibaba.cloud.service.FlowRuleHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class SunshineDataSource extends AutoRefreshDataSource {
