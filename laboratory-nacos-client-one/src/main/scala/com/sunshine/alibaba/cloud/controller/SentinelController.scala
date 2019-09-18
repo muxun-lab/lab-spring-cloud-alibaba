@@ -13,7 +13,12 @@ class SentinelController {
 
   @SentinelResource(value = "sentinelTest")
   @GetMapping(Array("/sentinel/one"))
-  def sentinelOne(): String = {
+  def buildSentinelOne(): String = {
     "Sunshine Spring Cloud Alibaba之Sentinel系列"
+  }
+
+  @GetMapping(Array("/sentinel/two"))
+  def buildSentinelTwo(): String = {
+    ""
   }
 }

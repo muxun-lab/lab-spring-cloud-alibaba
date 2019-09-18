@@ -1,0 +1,17 @@
+server:
+  port: 44000
+spring:
+  application:
+    name: dubbo-client-first
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  main:
+    allow-bean-definition-overriding: true
+dubbo:
+  scan:
+    base-packages: com.sunshine.service.spring.cloud.alibaba.laboratory.client.dubbo.first.service
+  protocol:
+    name: dubbo
+    port: -1

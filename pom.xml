@@ -14,62 +14,56 @@
         <module>laboratory-nacos-client-two</module>
         <module>laboratory-nacos-client-three</module>
         <module>laboratory-discovery</module>
-        <module>laboratory-commons</module>
+        <module>laboratory-client</module>
+        <module>laboratory-api</module>
     </modules>
 
     <name>spring-cloud-alibaba-laboratory</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <spring.cloud.alibaba.dependencies.version>0.2.0.RELEASE</spring.cloud.alibaba.dependencies.version>
+        <maven.compiler.source>12</maven.compiler.source>
+        <maven.compiler.target>12</maven.compiler.target>
+        <spring.cloud.alibaba.dependencies.version>2.1.0.RELEASE</spring.cloud.alibaba.dependencies.version>
+        <spring.boot.dependencies.version>2.1.8.RELEASE</spring.boot.dependencies.version>
+        <spring.cloud.dependencies.version>Greenwich.SR3</spring.cloud.dependencies.version>
+        <dubbo.version>2.7.3</dubbo.version>
         <jooq.version>3.11.7</jooq.version>
-        <scala.version>2.12.8</scala.version>
+        <scala.version>2.13.0</scala.version>
         <scala.logging.version>3.9.2</scala.logging.version>
+        <!-- internal start -->
+        <laboratory.dubbo.api.version>1.0-SNAPSHOT</laboratory.dubbo.api.version>
+        <!-- internal end -->
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <!-- JOOQ -->
             <dependency>
-                <groupId>org.jooq</groupId>
-                <artifactId>jooq</artifactId>
-                <version>${jooq.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jooq</groupId>
-                <artifactId>jooq-meta</artifactId>
-                <version>${jooq.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jooq</groupId>
-                <artifactId>jooq-codegen</artifactId>
-                <version>${jooq.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.zaxxer</groupId>
-                <artifactId>HikariCP</artifactId>
-                <version>2.7.4</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
+                <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>0.2.2.RELEASE</version>
+                <version>${spring.cloud.alibaba.dependencies.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.0.6.RELEASE</version>
+                <version>${spring.boot.dependencies.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Finchley.RELEASE</version>
+                <version>${spring.cloud.dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Dubbo -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-bom</artifactId>
+                <version>${dubbo.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -112,6 +106,13 @@
                 <artifactId>hikari-cp</artifactId>
                 <version>2.6.0</version>
             </dependency>
+            <!-- internal start -->
+            <dependency>
+                <groupId>com.sunshine</groupId>
+                <artifactId>laboratory-api</artifactId>
+                <version>${laboratory.dubbo.api.version}</version>
+            </dependency>
+            <!-- internal end -->
         </dependencies>
     </dependencyManagement>
 
@@ -149,8 +150,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.7.0</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>12</source>
+                    <target>12</target>
                 </configuration>
             </plugin>
             <plugin>
