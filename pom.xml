@@ -1,71 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.sunshine</groupId>
+    <groupId>com.sunshine.service</groupId>
     <artifactId>spring-cloud-alibaba-laboratory</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>laboratory-main</module>
-        <module>laboratory-nacos-client-one</module>
-        <module>laboratory-nacos-client-two</module>
-        <module>laboratory-nacos-client-three</module>
-        <module>laboratory-discovery</module>
-        <module>laboratory-client</module>
-        <module>laboratory-api</module>
+        <module>client</module>
+        <module>server</module>
+        <module>dubbo</module>
     </modules>
-
-    <name>spring-cloud-alibaba-laboratory</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>12</maven.compiler.source>
-        <maven.compiler.target>12</maven.compiler.target>
-        <spring.cloud.alibaba.dependencies.version>2.1.0.RELEASE</spring.cloud.alibaba.dependencies.version>
-        <spring.boot.dependencies.version>2.1.8.RELEASE</spring.boot.dependencies.version>
-        <spring.cloud.dependencies.version>Greenwich.SR3</spring.cloud.dependencies.version>
-        <dubbo.version>2.7.3</dubbo.version>
-        <jooq.version>3.11.7</jooq.version>
-        <scala.version>2.13.0</scala.version>
+        <spring.cloud.alibaba.version>2.2.1.RELEASE</spring.cloud.alibaba.version>
+        <spring.boot.version>2.2.6.RELEASE</spring.boot.version>
+        <spring.cloud.version>Hoxton.RELEASE</spring.cloud.version>
+        <dubbo.spring.boot.version>2.7.6</dubbo.spring.boot.version>
+        <dubbo.registry.nacos.version>0.0.2</dubbo.registry.nacos.version>
+        <com.alibaba.spring.context.support.version>1.0.6</com.alibaba.spring.context.support.version>
+        <scala.version>2.13.1</scala.version>
         <scala.logging.version>3.9.2</scala.logging.version>
-        <!-- internal start -->
-        <laboratory.dubbo.api.version>1.0-SNAPSHOT</laboratory.dubbo.api.version>
-        <!-- internal end -->
+        <org.apache.commons.lang3.version>3.10</org.apache.commons.lang3.version>
+        <mysql.version>8.0.19</mysql.version>
+        <hikari.version>3.4.2</hikari.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!-- external start -->
+            <!-- Spring Cloud Alibaba -->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>${spring.cloud.alibaba.dependencies.version}</version>
+                <version>${spring.cloud.alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring.boot.dependencies.version}</version>
+                <version>${spring.boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring.cloud.dependencies.version}</version>
+                <version>${spring.cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <!-- Dubbo -->
             <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-bom</artifactId>
-                <version>${dubbo.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-dubbo</artifactId>
+                <version>${spring.cloud.alibaba.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>4.1.45.Final</version>
             </dependency>
             <!-- Scala -->
             <dependency>
@@ -92,25 +90,26 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>3.8.1</version>
+                <version>${org.apache.commons.lang3.version}</version>
             </dependency>
             <!-- Database -->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>8.0.16</version>
+                <version>${mysql.version}</version>
             </dependency>
             <!-- Database Pool -->
             <dependency>
-                <groupId>hikari-cp</groupId>
-                <artifactId>hikari-cp</artifactId>
-                <version>2.6.0</version>
+                <groupId>com.zaxxer</groupId>
+                <artifactId>HikariCP</artifactId>
+                <version>${hikari.version}</version>
             </dependency>
+            <!-- external end -->
             <!-- internal start -->
             <dependency>
-                <groupId>com.sunshine</groupId>
-                <artifactId>laboratory-api</artifactId>
-                <version>${laboratory.dubbo.api.version}</version>
+                <groupId>com.sunshine.service</groupId>
+                <artifactId>dubbo-service</artifactId>
+                <version>${project.version}</version>
             </dependency>
             <!-- internal end -->
         </dependencies>
@@ -148,27 +147,27 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
+                <version>3.8.1</version>
                 <configuration>
-                    <source>12</source>
-                    <target>12</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.1.0</version>
             </plugin>
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>3.0.2</version>
+                <version>3.1.0</version>
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.20.1</version>
+                <version>2.22.2</version>
             </plugin>
             <plugin>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.0.2</version>
+                <version>3.2.0</version>
             </plugin>
             <plugin>
                 <artifactId>maven-install-plugin</artifactId>

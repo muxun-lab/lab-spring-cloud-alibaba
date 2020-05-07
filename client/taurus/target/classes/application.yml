@@ -1,0 +1,21 @@
+server:
+  port: 40101
+spring:
+  application:
+    name: sunshine-taurus
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        register-enabled: true
+        server-addr: 127.0.0.1:8848
+provider:
+  application:
+    name: sunshine-leo
+dubbo:
+  registry:
+    address: spring-cloud://localhost
+  consumer:
+    check: false

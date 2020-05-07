@@ -1,1 +1,0 @@
-package com.sunshine.service.spring.cloud.alibaba.laboratory.dubbo.api;

@@ -1,0 +1,26 @@
+server:
+  port: 40103
+spring:
+  application:
+    name: sunshine-leo
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        register-enabled: true
+        server-addr: 127.0.0.1:8848
+dubbo:
+  scan:
+    base-packages: com.sunshine.service.spring.cloud.alibaba.laboratory.sagittarius.rpc
+  protocols:
+    dubbo:
+      name: dubbo
+      port: -1
+    rest:
+      name: rest
+      port: 9090
+      server: netty
+  registry:
+    address: nacos://127.0.0.1:8848

@@ -1,5 +1,0 @@
-server:
-  port: 20030
-spring:
-  application:
-    name: laboratory-nacos-client

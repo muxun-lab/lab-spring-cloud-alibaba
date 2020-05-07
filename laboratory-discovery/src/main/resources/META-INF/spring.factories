@@ -1,2 +1,0 @@
-org.springframework.cloud.client.discovery.EnableDiscoveryClient=\
-  com.sunshine.discovery.client.configuration.SunshineDiscoveryClientAutoConfiguration
