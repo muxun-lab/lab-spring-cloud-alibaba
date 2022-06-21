@@ -25,7 +25,7 @@
         <scala.version>2.13.1</scala.version>
         <scala.logging.version>3.9.2</scala.logging.version>
         <org.apache.commons.lang3.version>3.10</org.apache.commons.lang3.version>
-        <mysql.version>8.0.19</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <hikari.version>3.4.2</hikari.version>
     </properties>
 
