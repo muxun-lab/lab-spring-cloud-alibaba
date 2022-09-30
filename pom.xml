@@ -22,7 +22,7 @@
         <dubbo.spring.boot.version>2.7.6</dubbo.spring.boot.version>
         <dubbo.registry.nacos.version>0.0.2</dubbo.registry.nacos.version>
         <com.alibaba.spring.context.support.version>1.0.6</com.alibaba.spring.context.support.version>
-        <scala.version>2.13.1</scala.version>
+        <scala.version>2.13.9</scala.version>
         <scala.logging.version>3.9.2</scala.logging.version>
         <org.apache.commons.lang3.version>3.10</org.apache.commons.lang3.version>
         <mysql.version>8.0.19</mysql.version>
